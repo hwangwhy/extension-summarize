@@ -58,3 +58,48 @@ button:hover {
   overflow-y: auto;
   white-space: pre-wrap;
 }
+
+.history-section {
+  margin-top: 20px;
+  border-top: 1px solid #e5e7eb;
+  padding-top: 15px;
+}
+
+.history-section h2 {
+  font-size: 16px;
+  color: #111827;
+  margin-bottom: 10px;
+}
+
+.history-list {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.history-item {
+  background: #ffffff;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  font-size: 13px;
+}
+
+.history-item .timestamp {
+  color: #6b7280;
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+
+.history-item .function {
+  color: #4f46e5;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.history-item .text {
+  color: #111827;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
