@@ -49,14 +49,22 @@ button:hover {
 .output {
   margin-top: 20px;
   background: #ffffff;
-  padding: 12px;
+  padding: 16px;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-  font-size: 13px;
+  font-size: 14px;
   color: #111827;
   max-height: 200px;
   overflow-y: auto;
   white-space: pre-wrap;
+  line-height: 1.6;
+  border-left: 4px solid #4f46e5;
+}
+
+.output:empty::before {
+  content: "Kết quả sẽ hiện ở đây.";
+  color: #9ca3af;
+  font-style: italic;
 }
 
 .history-section {
@@ -83,6 +91,21 @@ button:hover {
   margin-bottom: 8px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
   font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.history-item:hover {
+  background: #f8fafc;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-color: #e2e8f0;
+  transform: translateY(-1px);
+}
+
+.history-item:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .history-item .timestamp {
@@ -102,4 +125,85 @@ button:hover {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  margin-bottom: 6px;
+}
+
+.history-item .result {
+  color: #6b7280;
+  font-size: 12px;
+  line-height: 1.4;
+  background: #f9fafb;
+  padding: 6px 8px;
+  border-radius: 4px;
+  white-space: pre-wrap;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  margin-bottom: 4px;
+}
+
+.history-item .click-hint {
+  font-size: 11px;
+  color: #9ca3af;
+  text-align: center;
+  font-style: italic;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.history-item:hover .click-hint {
+  opacity: 1;
+}
+
+/* History Detail Styles */
+.history-detail {
+  padding: 0;
+}
+
+.history-detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.function-badge {
+  background: #4f46e5;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.timestamp-badge {
+  background: #f3f4f6;
+  color: #6b7280;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+}
+
+.original-text {
+  background: #f8fafc;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  border-left: 3px solid #e2e8f0;
+}
+
+.result-content {
+  background: #f0f9ff;
+  padding: 10px;
+  border-radius: 6px;
+  border-left: 3px solid #3b82f6;
+}
+
+.original-text strong,
+.result-content strong {
+  color: #374151;
+  font-size: 13px;
 }
